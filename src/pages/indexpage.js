@@ -1,9 +1,10 @@
-import {Badge, Container, Row, Col} from "react-bootstrap"
+import {Badge, Container, Row, Col, Button} from "react-bootstrap"
 import JumboTron from "../components/Headercard";
 import TempCard from "../components/Card"
 import axios from "axios";
 import { useEffect, useState } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip,  LabelList } from 'recharts';
+import { useHistory } from "react-router"
 
 let url = "https://api.openweathermap.org/data/2.5/onecall?lat=58.96&lon=5.73&units=metric&exclude=currently,minutely&appid=cfa5776ea5e4da9aecbc0e76164f8659"
  
@@ -38,7 +39,7 @@ function AddWeatherToDb(weatherobject){
 
 
 function IndexPage(){
-    
+const history = useHistory();
 const [results, setResult] = useState([])
 const [hourly, setHourly] = useState([])
 
@@ -64,6 +65,8 @@ console.log(datoliste)
 
 
 const timeliste = []
+
+
 
 
 for(let i = 0; i < 48; i++){
@@ -153,6 +156,9 @@ for(let i = 0; i < 48; i++){
         <>
         <h1>
          <Badge bg="secondary">Weather Forecast</Badge>
+         <Button variant="primary" onClick={()=>history.push('/historicaldata')}>
+           Historicaldata
+         </Button>
         </h1>
         
         <Container>
