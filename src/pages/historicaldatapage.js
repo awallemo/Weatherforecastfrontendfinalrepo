@@ -9,7 +9,7 @@ function Historicaldatapage(){
     const [test, setTest] = useState([])
 
     useEffect(() =>{
-        axios.get("https://localhost:5001/api/Weathercards/")
+        axios.get("https://weatherforecastbackend.azurewebsites.net/api/Weathercards/")
               .then((res) => {console.log(res)
                 setTest(res.data)
                 console.log(res.data.length)

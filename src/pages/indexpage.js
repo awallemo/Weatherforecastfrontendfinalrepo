@@ -26,7 +26,7 @@ export async function getHourlyWeather(){
 }
 
 function AddWeatherToDb(weatherobject){
- axios.post("https://localhost:5001/api/Weathercards/",{
+ axios.post("https://weatherforecastbackend.azurewebsites.net/api/Weathercards/",{
   
   date: weatherobject.date.toString(),
   day:weatherobject.day,
@@ -117,7 +117,7 @@ for(let i = 0; i < 48; i++){
 
           
           
-          axios.get("https://localhost:5001/api/Weathercards/")
+          axios.get("https://weatherforecastbackend.azurewebsites.net/api/Weathercards/")
           .then((res) => 
           {
            debugger 
@@ -129,7 +129,7 @@ for(let i = 0; i < 48; i++){
               AddWeatherToDb(dailylist[0])
             }else if(res.data[res.data.length-1].maxtemp !== dailylist[0].maxtemp){
               
-              axios.delete(`https://localhost:5001/api/Weathercards/${res.data[res.data.length-1].id}`)
+              axios.delete(`https://weatherforecastbackend.azurewebsites.net/Weathercards/${res.data[res.data.length-1].id}`)
               AddWeatherToDb(dailylist[0])
               
             }
