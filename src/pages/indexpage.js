@@ -219,7 +219,7 @@ for(let i = 0; i < 48; i++){
                     conditions={card.condition}
                     />
                 </Col>
-
+ 
             ))}
 
             </Row>
