@@ -35,18 +35,18 @@ const [geo, setGeo] = useState({lat: "", lon: ""})
 
 let datoliste = [];
 
-async function getCity(location){
+// async function getCity(location){
 
-  console.log("Hei", tempCity)
-  axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${location}&appid=cfa5776ea5e4da9aecbc0e76164f8659`)
-              .then((res) => {console.log("GEORESPONSE",res.data)
-                console.log(res.data.length)
-                console.log("lat",res.data[0].lat)
-                console.log("lon", res.data[0].lon)
-                setGeo({lat:res.data[0].lat, lon:res.data[0].lon})
-                console.log("GeoState",geo)
-            })
-}
+//   console.log("Hei", tempCity)
+//   axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${location}&appid=cfa5776ea5e4da9aecbc0e76164f8659`)
+//               .then((res) => {console.log("GEORESPONSE",res.data)
+//                 console.log(res.data.length)
+//                 console.log("lat",res.data[0].lat)
+//                 console.log("lon", res.data[0].lon)
+//                 setGeo({lat:res.data[0].lat, lon:res.data[0].lon})
+//                 console.log("GeoState",geo)
+//             })
+// }
 
 async function getWeather(){
   try{
